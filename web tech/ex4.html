@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Contest Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: -1;
+    }
+    .container {
+        max-width: 900px;
+        margin: 30px auto;
+        background: rgba(255,255,255,0.95);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+        text-align: center;
+        color: #4a4a8e;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    h1 i {
+        color: #764ba2;
+    }
+    h2 {
+        color: #667eea;
+        margin-bottom: 15px;
+    }
+    .form-section {
+        margin-bottom: 25px;
+        padding: 15px;
+        border-radius: 8px;
+        background: linear-gradient(145deg, #f9f9ff, #f0f0fa);
+        transition: 0.3s;
+        border-left: 6px solid #764ba2;
+    }
+    .form-section:hover {
+        box-shadow: 0 4px 20px rgba(118,75,162,0.4);
+        transform: scale(1.01);
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #4a4a8e;
+    }
+    label i {
+        margin-right: 8px;
+        color: #764ba2;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 8px rgba(102,126,234,0.4);
+    }
+    .error {
+        color: #e74c3c;
+        font-size: 14px;
+        display: none;
+        margin-top: 5px;
+    }
+    .quiz-question h4 {
+        margin-bottom: 10px;
+        color: #444;
+    }
+    .quiz-question input {
+        margin-right: 6px;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .btn:hover {
+        background: linear-gradient(135deg, #5a6de0, #6d44a0);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    .result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #27ae60;
+        margin-top: 20px;
+        display: none;
+        background: rgba(39,174,96,0.1);
+        padding: 10px;
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+    <h1><i class="fa-solid fa-graduation-cap"></i> Registration & Quiz Contest Form</h1>
+
+    <form id="quizForm" novalidate>
+        <!-- Registration Section -->
+        <div class="form-section">
+            <h2><i class="fa-solid fa-user-pen"></i> Registration Details</h2>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-id-card"></i> Full Name *</label>
+                <input type="text" id="fullName" placeholder="Enter your name">
+                <div class="error" id="nameError">Name is required (min 3 characters).</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-envelope"></i> Email *</label>
+                <input type="email" id="email" placeholder="yourname@example.com">
+                <div class="error" id="emailError">Enter a valid email.</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-phone"></i> Phone *</label>
+                <input type="tel" id="phone" placeholder="10-digit number">
+                <div class="error" id="phoneError">Enter a valid 10-digit phone number.</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-calendar-days"></i> Date of Birth *</label>
+                <input type="date" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-id-badge"></i> Student ID *</label>
+                <input type="text" id="studentId" placeholder="STU-12345">
+                <div class="error" id="idError">Format: STU-12345</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-star"></i> GPA *</label>
+                <input type="number" min="0" max="4" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-book"></i> Major *</label>
+                <select required>
+                    <option value="">Select Major</option>
+                    <option>Computer Science</option>
+                    <option>Physics</option>
+                    <option>Engineering</option>
+                    <option>Mathematics</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-user-graduate"></i> Academic Year *</label>
+                <select required>
+                    <option value="">Select Year</option>
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-venus-mars"></i> Gender *</label>
+                <input type="radio" name="gender" value="Male"> 👨 Male
+                <input type="radio" name="gender" value="Female"> 👩 Female
+                <div class="error" id="genderError">Please select your gender.</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-heart"></i> Hobbies *</label>
+                <input type="checkbox" name="hobby" value="Reading"> 📚 Reading
+                <input type="checkbox" name="hobby" value="Music"> 🎵 Music
+                <input type="checkbox" name="hobby" value="Sports"> ⚽ Sports
+                <div class="error" id="hobbyError">Select at least one hobby.</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-globe"></i> Country *</label>
+                <select required>
+                    <option value="">Select Country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-lightbulb"></i> Favorite Fact Category *</label>
+                <select required>
+                    <option value="">Choose a category</option>
+                    <option>Science</option>
+                    <option>Technology</option>
+                    <option>Nature</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-pen"></i> About Yourself *</label>
+                <textarea id="about" rows="3" placeholder="Tell us about yourself"></textarea>
+                <div class="error" id="aboutError">Please write at least 10 characters.</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-lock"></i> Password *</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <div class="error" id="passwordError">Password must be at least 6 characters.</div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-lock"></i> Confirm Password *</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter password">
+                <div class="error" id="confirmError">Passwords do not match.</div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="form-section">
+            <h2><i class="fa-solid fa-question-circle"></i> Quick Quiz</h2>
+            <div class="quiz-question">
+                <h4>1️⃣ What is the capital of France?</h4>
+                <input type="radio" name="q1" value="Paris"> Paris
+                <input type="radio" name="q1" value="London"> London
+                <input type="radio" name="q1" value="Rome"> Rome
+            </div>
+            <div class="quiz-question">
+                <h4>2️⃣ Who developed Java?</h4>
+                <input type="radio" name="q2" value="James Gosling"> James Gosling
+                <input type="radio" name="q2" value="Dennis Ritchie"> Dennis Ritchie
+                <input type="radio" name="q2" value="Bjarne Stroustrup"> Bjarne Stroustrup
+            </div>
+            <div class="quiz-question">
+                <h4>3️⃣ HTML stands for?</h4>
+                <input type="radio" name="q3" value="Hyper Text Markup Language"> Hyper Text Markup Language
+                <input type="radio" name="q3" value="High Transfer Machine Language"> High Transfer Machine Language
+                <input type="radio" name="q3" value="Hyperlink Text Machine Language"> Hyperlink Text Machine Language
+            </div>
+        </div>
+
+        <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+        <div class="result" id="result"></div>
+    </form>
+</div>
+<script>
+// Existing validation logic (unchanged)
+document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('fullName').value.trim();
+    if (name.length < 3) { document.getElementById('nameError').style.display = 'block'; valid = false; } else { document.getElementById('nameError').style.display = 'none'; }
+    const email = document.getElementById('email').value.trim();
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email)) { document.getElementById('emailError').style.display = 'block'; valid = false; } else { document.getElementById('emailError').style.display = 'none'; }
+    const phone = document.getElementById('phone').value.trim();
+    if (!/^[0-9]{10}$/.test(phone)) { document.getElementById('phoneError').style.display = 'block'; valid = false; } else { document.getElementById('phoneError').style.display = 'none'; }
+    const studentId = document.getElementById('studentId').value.trim();
+    if (!/^STU-\d{5}$/.test(studentId)) { document.getElementById('idError').style.display = 'block'; valid = false; } else { document.getElementById('idError').style.display = 'none'; }
+    const gender = document.querySelector('input[name="gender"]:checked');
+    if (!gender) { document.getElementById('genderError').style.display = 'block'; valid = false; } else { document.getElementById('genderError').style.display = 'none'; }
+    const hobbies = document.querySelectorAll('input[name="hobby"]:checked');
+    if (hobbies.length === 0) { document.getElementById('hobbyError').style.display = 'block'; valid = false; } else { document.getElementById('hobbyError').style.display = 'none'; }
+    const about = document.getElementById('about').value.trim();
+    if (about.length < 10) { document.getElementById('aboutError').style.display = 'block'; valid = false; } else { document.getElementById('aboutError').style.display = 'none'; }
+    const password = document.getElementById('password').value;
+    if (password.length < 6) { document.getElementById('passwordError').style.display = 'block'; valid = false; } else { document.getElementById('passwordError').style.display = 'none'; }
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    if (password !== confirmPassword) { document.getElementById('confirmError').style.display = 'block'; valid = false; } else { document.getElementById('confirmError').style.display = 'none'; }
+    if (!valid) return;
+    let score = 0;
+    if (document.querySelector('input[name="q1"]:checked')?.value === "Paris") score++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === "James Gosling") score++;
+    if (document.querySelector('input[name="q3"]:checked')?.value === "Hyper Text Markup Language") score++;
+    document.getElementById('result').innerText = `✅ Registration Successful! Your quiz score is ${score}/3.`;
+    document.getElementById('result').style.display = 'block';
+});
+</script>
+</body>
+</html>
