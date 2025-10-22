@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fact Quiz - Start Quiz</title>
+  <style>
+    /* Full viewport height and gradient background */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    /* Form container */
+    form {
+      background: rgba(0, 0, 50, 0.7);
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,50,0.5);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    /* Title style */
+    h2 {
+      margin-bottom: 25px;
+      font-size: 2em;
+      text-shadow: 1px 1px 3px #001f3f;
+    }
+
+    /* Input fields */
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0 25px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: box-shadow 0.3s ease;
+    }
+    input[type="text"]:focus {
+      box-shadow: 0 0 10px #66a6ff;
+      outline: none;
+    }
+
+    /* Submit button */
+    input[type="submit"] {
+      background-color: #001f3f;
+      border: none;
+      padding: 14px 0;
+      border-radius: 50px;
+      width: 100%;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.4s ease;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,50,0.4);
+    }
+    input[type="submit"]:hover {
+      background-color: #003366;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <form action="http://localhost:8080/factservlets/SP11" method="GET" name="quizStartForm">
+    <h2>Start Fact Quiz</h2>
+    <input type="text" name="userName" placeholder="Enter your name" required />
+    <input type="text" name="quizTopic" placeholder="Enter quiz topic (e.g. Science)" required />
+    <input type="submit" value="Start Quiz" />
+  </form>
+</body>
+</html>
+

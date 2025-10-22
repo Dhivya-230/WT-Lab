@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Portal - Student Login</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 320px;
+      animation: slideIn 1s ease-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    label {
+      font-weight: bold;
+      color: #003366;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #66a6ff;
+      box-shadow: 0 0 8px rgba(102, 166, 255, 0.6);
+      outline: none;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #003366;
+      color: white;
+      padding: 12px;
+      font-size: 1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0059b3;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form action="http://localhost:8080/factservlets/SP7" method="GET">
+    <h2>Student Login</h2>
+    
+    <label for="studentName">Name:</label>
+    <input type="text" id="studentName" name="studentName" required />
+    
+    <label for="rollNo">Roll No:</label>
+    <input type="text" id="rollNo" name="rollNo" required />
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    
+    <input type="submit" value="Login" />
+  </form>
+
+</body>
+</html>

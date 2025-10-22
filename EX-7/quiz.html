@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fact Quiz</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      font-family: Arial, sans-serif;
+      color: #222;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+    form {
+      margin-top: 30px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: none;
+      background-color: #003366;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #0059b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Fact Quiz</h2>
+  <form action="submitQuiz" method="POST">
+    <label>1. What is the tallest mountain in the world?</label>
+    <input type="radio" name="q1" value="Mount Everest" required /> Mount Everest<br/>
+    <input type="radio" name="q1" value="K2" /> K2<br/>
+    <input type="radio" name="q1" value="Kangchenjunga" /> Kangchenjunga<br/>
+
+    <label>2. What is the capital of France?</label>
+    <input type="radio" name="q2" value="Paris" required /> Paris<br/>
+    <input type="radio" name="q2" value="Rome" /> Rome<br/>
+    <input type="radio" name="q2" value="Madrid" /> Madrid<br/>
+
+    <!-- Add more questions as needed -->
+
+    <input type="submit" value="Submit Quiz" />
+  </form>
+</body>
+</html>
+
