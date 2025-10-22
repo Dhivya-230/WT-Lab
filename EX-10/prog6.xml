@@ -1,0 +1,19 @@
+<?xml version="1.0"?>  
+<?xml-stylesheet type="text/xsl" href="prog6.xsl"?>
+<quiz>   
+   <item id="001"> 
+      <fact>The Earth revolves around the Sun.</fact>   
+      <question>Which planet is closest to the Sun?</question>   
+      <answer>Mercury</answer>  
+   </item>   
+   <item id="002">   
+      <fact>Water freezes at 0°C.</fact>   
+      <question>At what temperature does water freeze?</question>   
+      <answer>0°C</answer>  
+   </item>   
+   <item id="003">   
+      <fact>Lightning is hotter than the surface of the Sun.</fact>   
+      <question>Which is hotter, lightning or the Sun’s surface?</question>   
+      <answer>Lightning</answer>   
+   </item>   
+</quiz>  

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="users_style.xsl"?>
+<quiz>
+    <item>
+        <id>1</id>
+        <fact>The Earth revolves around the Sun.</fact>
+        <question>Which planet is closest to the Sun?</question>
+        <answer>Mercury</answer>
+    </item>
+    <item>
+        <id>2</id>
+        <fact>Water freezes at 0°C.</fact>
+        <question>At what temperature does water freeze?</question>
+        <answer>0°C</answer>
+    </item>
+    <item>
+        <id>3</id>
+        <fact>Lightning is hotter than the Sun's surface.</fact>
+        <question>Which is hotter, lightning or the Sun's surface?</question>
+        <answer>Lightning</answer>
+    </item>
+    <item>
+        <id>4</id>
+        <fact>The human heart beats around 100,000 times a day.</fact>
+        <question>How many times does the human heart beat daily?</question>
+        <answer>100,000</answer>
+    </item>
+    <item>
+        <id>5</id>
+        <fact>Bananas are berries, but strawberries are not.</fact>
+        <question>Which fruit is a berry: banana or strawberry?</question>
+        <answer>Banana</answer>
+    </item>
+    <item>
+        <id>6</id>
+        <fact>Octopuses have three hearts.</fact>
+        <question>How many hearts does an octopus have?</question>
+        <answer>Three</answer>
+    </item>
+    <item>
+        <id>7</id>
+        <fact>The Eiffel Tower can grow in summer.</fact>
+        <question>Which famous tower expands in summer?</question>
+        <answer>Eiffel Tower</answer>
+    </item>
+    <item>
+        <id>8</id>
+        <fact>Honey never spoils.</fact>
+        <question>Which food never spoils?</question>
+        <answer>Honey</answer>
+    </item>
+    <item>
+        <id>9</id>
+        <fact>Sharks existed before trees.</fact>
+        <question>Did sharks exist before trees?</question>
+        <answer>Yes</answer>
+    </item>
+    <item>
+        <id>10</id>
+        <fact>There are more stars in the universe than grains of sand on Earth.</fact>
+        <question>Are there more stars in the universe than grains of sand on Earth?</question>
+        <answer>Yes</answer>
+    </item>
+</quiz>

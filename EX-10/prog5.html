@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Facts & Quiz</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            padding: 30px;
+         }
+         h1 {
+            color: #2e3d49;
+         }
+         .card {
+            background-color: #ffffffcc;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            display: inline-block;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            max-width: 400px;
+         }
+         .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+         }
+         b {
+            color: #ff6f61;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Facts & Quiz</h1>
+      <div class="card">
+         <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2" alt="Science Image">
+         <b>Fact:</b> <span id="fact"></span><br><br>
+         <b>Quiz Question:</b> <span id="question"></span><br><br>
+         <b>Answer:</b> <span id="answer"></span>
+      </div>
+
+      <script>
+         let xmlhttp;
+         if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+         } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+         }
+
+         xmlhttp.open("GET", "prog5.xml", false);
+         xmlhttp.send();
+         let xmlDoc = xmlhttp.responseXML;
+
+         document.getElementById("fact").innerHTML =
+            xmlDoc.getElementsByTagName("fact")[0].childNodes[0].nodeValue;
+         document.getElementById("question").innerHTML =
+            xmlDoc.getElementsByTagName("question")[0].childNodes[0].nodeValue;
+         document.getElementById("answer").innerHTML =
+            xmlDoc.getElementsByTagName("answer")[0].childNodes[0].nodeValue;
+      </script>
+   </body>
+</html>

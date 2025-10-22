@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Facts & Quiz</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(to right, #ffecd2, #fcb69f);
+                text-align: center;
+                padding: 50px;
+            }
+            h1 {
+                color: #2e3d49;
+            }
+            form {
+                background-color: #ffffffcc;
+                display: inline-block;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            }
+            input[type="text"] {
+                padding: 8px;
+                width: 200px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+            input[type="submit"] {
+                padding: 8px 15px;
+                border-radius: 5px;
+                border: none;
+                background-color: #4CAF50;
+                color: white;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Search Facts & Quiz by ID</h1>
+        <form action="xml_search.php" method="POST">
+            Enter Fact/Quiz ID: <input type="text" name="id" required/><br/><br/>
+            <input type="submit" value="Search"/>
+        </form>
+    </body>
+</html>
