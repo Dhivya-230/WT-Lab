@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts & Quizzes Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            color: #222;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 2.5rem;
+            color: #003366;
+            text-shadow: 0 0 15px rgba(0, 51, 102, 0.4);
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #3498db; }
+            to { text-shadow: 0 0 25px #5dade2; }
+        }
+
+        hr {
+            width: 70%;
+            height: 2px;
+            background-color: #003366;
+            border: none;
+            border-radius: 2px;
+            margin: 20px auto;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 20px;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #1abc9c;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4);
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            padding: 25px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: left;
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 16px;
+            border-radius: 8px;
+            border: 1px solid #2980b9;
+        }
+
+        input[type="submit"] {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1abc9c;
+            box-shadow: 0 6px 15px rgba(26, 188, 156, 0.4);
+        }
+
+        section {
+            margin: 40px auto;
+            width: 70%;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+        /* Background floating bubbles */
+        .bubble {
+            position: fixed;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-800px) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌟 Facts & Quizzes Portal 🌟</h1>
+    <hr>
+
+    <section>
+        <h2>📚 View All Facts & Quizzes</h2>
+        <a href="http://localhost:8080/factservlets/fq_db1" class="button">View All Entries</a>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>🎯 View by Category</h2>
+        <form action="http://localhost:8080/factservlets/fq_db2" method="get">
+            <label for="category"><b>Select Category:</b></label>
+            <select id="category" name="category" required>
+                <option value="">-- Choose --</option>
+                <option value="Science">Science</option>
+                <option value="Technology">Technology</option>
+                <option value="History">History</option>
+                <option value="FunFacts">Fun Facts</option>
+                <option value="Quizzes">Quizzes</option>
+            </select>
+            <input type="submit" value="Show Results">
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>📝 Add a New Fact or Quiz</h2>
+        <form action="http://localhost:8080/factservlets/fq_db3" method="post">
+            <label for="id"><b>ID:</b></label>
+            <input type="text" name="id" id="id" required>
+
+            <label for="title"><b>Title:</b></label>
+            <input type="text" name="title" id="title" required>
+
+            <label for="category"><b>Category:</b></label>
+            <input type="text" name="category" id="category" required>
+
+            <label for="content"><b>Content:</b></label>
+            <textarea name="content" id="content" rows="4" required></textarea>
+
+            <input type="submit" value="Insert Record">
+        </form>
+    </section>
+
+    <footer>
+        <p>✨ Developed by Dhivya R | Facts & Quizzes Servlet Project ✨</p>
+    </footer>
+
+    <!-- Animated background bubbles -->
+    <div class="bubble" style="left:10%; animation-delay:0s;"></div>
+    <div class="bubble" style="left:30%; animation-delay:2s;"></div>
+    <div class="bubble" style="left:50%; animation-delay:4s;"></div>
+    <div class="bubble" style="left:70%; animation-delay:1s;"></div>
+    <div class="bubble" style="left:90%; animation-delay:3s;"></div>
+
+</body>
+</html>
