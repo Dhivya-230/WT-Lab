@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts & Quizzes Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            animation: bgShift 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgShift {
+            0% { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+            100% { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #f0f8ffcc;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #fff;
+            color: #0077b6;
+            padding: 15px 35px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ffe066;
+            color: #2a2a72;
+            transform: scale(1.1) rotate(1deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.85);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Facts & Quizzes Logo">
+
+    <h1>🧠 Facts & Quizzes Portal</h1>
+    <p>Track total visits and view unique visitors to this portal!</p>
+
+    <div class="button-container">
+        <a href="http://localhost:8080/factservlets/fq_db15">🔢 Total Page Visits</a>
+        <a href="http://localhost:8080/factservlets/fq_db16">👤 Unique Visitors</a>
+    </div>
+
+    <footer>© 2025 Facts & Quizzes Hub | Created by Dhivya R 💡</footer>
+
+    <script>
+        // Soft hover glow effect
+        document.querySelectorAll('a').forEach(btn => {
+            btn.addEventListener('mouseover', () => {
+                btn.style.boxShadow = '0 0 25px rgba(255, 255, 255, 0.6)';
+            });
+            btn.addEventListener('mouseout', () => {
+                btn.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.25)';
+            });
+        });
+    </script>
+
+</body>
+</html>
