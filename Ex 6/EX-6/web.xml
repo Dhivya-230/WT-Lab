@@ -1,0 +1,23 @@
+<web-app>
+<!--  Define servlets that are included in the example application  -->
+<servlet>
+<servlet-name>FirstServlet</servlet-name>
+<servlet-class>SProg1</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>FirstServlet</servlet-name>
+<url-pattern>/ServletProg1</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>SecondServlet</servlet-name>
+<servlet-class>SProg2</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>SecondServlet</servlet-name>
+<url-pattern>/ServletProg2</url-pattern>
+</servlet-mapping>
+<error-page>
+<error-code>403</error-code>
+<location>/WEB-INF/jsp/403.jsp</location>
+</error-page>
+</web-app>
